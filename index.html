@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andmejälgija – Minu andmete lugu</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#17324d;background:#f3f7f8;line-height:1.5} button{font:inherit;cursor:pointer}
+  .topbar{background:#063b5c;color:#fff;padding:16px 5%;display:table;width:100%}.brand{display:table-cell;font-size:23px;font-weight:bold;letter-spacing:-.4px}.brand span{color:#64d4c3}.nav{display:table-cell;text-align:right;vertical-align:middle;font-size:14px}.nav a{color:#fff;text-decoration:none;margin-left:22px;opacity:.94}
+  .wrap{max-width:1120px;margin:0 auto;padding:34px 24px 56px}.crumb{font-size:14px;color:#587084;margin-bottom:18px}.hero{background:#fff;border-radius:16px;padding:30px 34px;border:1px solid #dce8ea;position:relative;overflow:hidden}.hero:after{content:'';position:absolute;width:215px;height:215px;border:34px solid #d6f4ef;border-radius:50%;right:-68px;top:-87px}.eyebrow{display:inline-block;background:#e0f6f2;color:#056b61;border-radius:20px;padding:5px 10px;font-size:13px;font-weight:bold}.hero h1{margin:12px 0 8px;font-size:37px;line-height:1.12;max-width:680px;letter-spacing:-1px}.hero p{margin:0;max-width:650px;color:#486276;font-size:17px}.hero strong{color:#17324d}.intro-grid{display:table;width:100%;border-spacing:18px 0;margin:26px -18px 0}.intro-card{display:table-cell;width:33.33%;background:#fff;border:1px solid #dce8ea;border-radius:13px;padding:18px;vertical-align:top}.icon{width:36px;height:36px;border-radius:9px;background:#e0f6f2;color:#056b61;text-align:center;padding-top:7px;font-weight:bold;margin-bottom:11px}.intro-card h3{font-size:16px;margin:0 0 5px}.intro-card p{font-size:14px;margin:0;color:#587084}
+  .section-head{margin:37px 0 16px;display:table;width:100%}.section-head h2{display:table-cell;margin:0;font-size:25px;letter-spacing:-.4px}.section-head .muted{display:table-cell;text-align:right;vertical-align:bottom;color:#587084;font-size:14px}.filters{background:#fff;border:1px solid #dce8ea;border-radius:12px;padding:14px 16px;margin-bottom:16px}.filters label{font-size:13px;font-weight:bold;margin-right:8px}.filters select{padding:9px 30px 9px 10px;border:1px solid #b9cbd3;border-radius:7px;background:#fff;color:#17324d;margin-right:13px}
+  .layout{display:table;width:100%;border-spacing:18px 0;margin:0 -18px}.main{display:table-cell;width:67%;vertical-align:top}.side{display:table-cell;width:33%;vertical-align:top}.event{background:#fff;border:1px solid #dce8ea;border-radius:13px;padding:20px;margin-bottom:13px;position:relative}.event:hover{border-color:#63caba}.event-top{display:table;width:100%;margin-bottom:8px}.event-date{display:table-cell;color:#587084;font-size:13px}.badge{display:table-cell;text-align:right}.badge span{background:#e5f7eb;color:#14743d;border-radius:20px;padding:5px 9px;font-size:12px;font-weight:bold}.event h3{margin:0 0 5px;font-size:18px}.event p{margin:0;color:#4d6576;font-size:15px}.event-actions{margin-top:15px}.linkbtn{border:0;background:none;color:#006e65;font-weight:bold;padding:0;margin-right:18px}.outline{border:1px solid #0b786e;border-radius:7px;background:#fff;color:#006e65;padding:8px 11px;font-weight:bold;font-size:14px}.side-card{background:#063b5c;color:#fff;border-radius:13px;padding:22px;margin-bottom:16px}.side-card h3{margin:0 0 8px;font-size:20px}.side-card p{margin:0 0 15px;color:#d9e9f0;font-size:14px}.side-card button{background:#64d4c3;color:#063b5c;border:0;border-radius:7px;font-weight:bold;padding:10px 13px}.tip{background:#fff;border:1px solid #dce8ea;border-radius:13px;padding:19px}.tip h3{margin:0 0 8px;font-size:17px}.tip p{margin:0;color:#587084;font-size:14px}.small-link{display:inline-block;color:#006e65;font-weight:bold;font-size:14px;margin-top:12px;text-decoration:none}
+  .modal{display:none;position:fixed;z-index:10;inset:0;background:rgba(6,35,52,.55);padding:24px;overflow:auto}.modal.open{display:block}.dialog{background:#fff;max-width:650px;margin:52px auto;border-radius:15px;padding:28px;position:relative}.close{position:absolute;right:17px;top:13px;border:0;background:none;font-size:28px;color:#456}.dialog h2{margin:0 35px 14px 0;font-size:27px}.detail-box{background:#f2f8f8;border-left:4px solid #35aa9d;padding:15px;margin:16px 0;border-radius:4px}.detail-box p{margin:4px 0;color:#38566a}.question{border-top:1px solid #dce8ea;margin-top:19px;padding-top:18px}.question textarea{width:100%;height:115px;border:1px solid #b9cbd3;border-radius:8px;padding:10px;font:inherit;color:#17324d}.primary{border:0;background:#087b71;color:#fff;border-radius:7px;padding:11px 15px;font-weight:bold;margin-top:10px}.notice{display:none;background:#e5f7eb;border-radius:8px;color:#146d3c;padding:10px;margin-top:12px;font-weight:bold}
+  .footer{font-size:13px;color:#5d7280;margin-top:35px;border-top:1px solid #dce8ea;padding-top:20px}.prototype-note{font-size:12px;color:#6b7c87;margin-top:8px}
+  .ask-box{background:#fff;border:1px solid #dce8ea;border-radius:13px;padding:19px;margin-top:16px}.ask-box h3{margin:0 0 8px;font-size:17px}.ask-box p{margin:0 0 14px;color:#587084;font-size:14px}.ask-sidebar-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#087b71;color:#fff;border:0;border-radius:7px;padding:12px 18px;font-weight:bold;font-size:15px;width:100%}.ask-sidebar-btn:hover{background:#066059}.ask-filters{background:#f2f8f8;border:1px solid #dce8ea;border-radius:10px;padding:13px 15px;margin:16px 0}.ask-filters label{font-size:13px;font-weight:bold;margin-right:8px}.ask-filters select{padding:8px 26px 8px 10px;border:1px solid #b9cbd3;border-radius:7px;margin-right:12px}.ask-list{margin:14px 0;max-height:260px;overflow:auto;border:1px solid #dce8ea;border-radius:10px}.ask-item{display:block;padding:13px 15px;border-bottom:1px solid #eef3f4;font-size:14px;cursor:pointer}.ask-item:last-child{border-bottom:0}.ask-item input{margin-right:10px}.ask-item span{display:block;color:#587084;font-size:13px;margin-top:2px}.ask-empty{padding:18px;color:#587084;font-size:14px;text-align:center}.ask-summary{background:#f2f8f8;border-left:4px solid #35aa9d;padding:15px;border-radius:4px;margin:15px 0}.ask-summary li{margin-bottom:4px}.sig-note{font-size:13px;color:#587084;margin-top:14px}
+  @media(max-width:760px){.nav{display:none}.hero{padding:24px}.hero h1{font-size:30px}.intro-grid,.layout{display:block;margin:0}.intro-card,.main,.side{display:block;width:100%;margin:14px 0}.filters select{display:block;width:100%;margin:7px 0 13px}.section-head .muted{display:none}.wrap{padding:22px 16px}.hero:after{display:none}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="brand">eesti.ee <span>Andmejälgija</span></div><nav class="nav"><a href="#sundmused">Minu andmesündmused</a><a href="#abi">Abi ja selgitused</a></nav></header>
+<main class="wrap">
+  <div class="crumb">eesti.ee / Minu andmed / Andmejälgija</div>
+  <section class="hero">
+    <span class="eyebrow">MINU ANDMETE LUGU</span>
+    <h1>Vaata, kes ja miks sinu andmeid kasutas.</h1>
+    <p>Andmejälgija aitab sul lihtsas keeles mõista avaliku sektori asutuste andmekasutust. Ava sündmus, et näha <strong>kes, millal, miks ja milliseid andmeid</strong> kasutas.</p>
+  </section>
+  <section class="intro-grid" aria-label="Andmejälgija selgitus">
+    <div class="intro-card"><div class="icon">1</div><h3>Vaata sündmusi</h3><p>Näed kronoloogilises vaates, millised asutused sinu andmeid kasutasid.</p></div>
+    <div class="intro-card"><div class="icon">2</div><h3>Mõista põhjust</h3><p>Iga kirje juures on selgitus inimese keeles, mitte ainult tehniline logi.</p></div>
+    <div class="intro-card"><div class="icon">3</div><h3>Küsi selgitust</h3><p>Kui miski tundub ebatavaline või jääb segaseks, saad küsida otse asutuselt.</p></div>
+  </section>
+  <div class="section-head" id="sundmused"><h2>Minu hiljutised andmesündmused</h2><div class="muted">Näidisandmed Demo Day prototüübi jaoks</div></div>
+  <div class="filters"><label for="area">Filtreeri valdkonna järgi</label><select id="area"><option>Kõik valdkonnad</option><option>Tervis</option><option>Haridus</option><option>Sotsiaalteenused</option><option>Rahvastik</option></select><label for="period">Ajavahemik</label><select id="period"><option>Viimased 30 päeva</option><option>Viimased 7 päeva</option><option>Viimased 12 kuud</option></select></div>
+  <div class="layout">
+    <section class="main">
+      <article class="event"><div class="event-top"><div class="event-date">25. oktoober 2026 · 10.34</div><div class="badge"><span>Tavaline toiming</span></div></div><h3>Terviseamet kasutas sinu kontaktandmeid</h3><p>Eesmärk: saata teavitus sinu poolelioleva menetluse kohta.</p><div class="event-actions"><button class="linkbtn" onclick="openDetail('health')">Miks see toimus?</button></div></article>
+      <article class="event"><div class="event-top"><div class="event-date">18. oktoober 2026 · 14.08</div><div class="badge"><span>Tavaline toiming</span></div></div><h3>Transpordiamet kontrollis sinu aadressiandmeid</h3><p>Eesmärk: ajakohastada sinu juhiloa väljastamisega seotud kontaktandmed.</p><div class="event-actions"><button class="linkbtn" onclick="openDetail('transport')">Miks see toimus?</button></div></article>
+      <article class="event"><div class="event-top"><div class="event-date">9. oktoober 2026 · 09.21</div><div class="badge"><span>Tavaline toiming</span></div></div><h3>Haridus- ja Noorteamet kontrollis sinu haridusandmeid</h3><p>Eesmärk: töödelda sinu esitatud taotlust haridusteenuse kasutamiseks.</p><div class="event-actions"><button class="linkbtn" onclick="openDetail('education')">Miks see toimus?</button></div></article>
+    </section>
+    <aside class="side" id="abi"><div class="side-card"><h3>Kas miski tundub ebatavaline?</h3><p>Ära muretse kohe: paljud andmekasutused on seotud tavapärase teenuse, menetluse või teavitusega. Ava sündmus ja vaata selle selgitust.</p><button onclick="showHelp()">Kuidas andmesündmusi tõlgendada?</button></div><div class="tip"><h3>Miks ma seda näen?</h3><p>Sul on õigus teada, millal avaliku sektori asutus sinu isikuandmeid kasutab. See aitab sul oma andmete kasutamisest paremini aru saada.</p><a class="small-link" href="#sundmused">Tagasi andmesündmuste juurde →</a></div><div class="ask-box"><h3>Soovid selgitust?</h3><p>Vali üks või mitu sündmust ja saada korraga üks koondpäring vastutavale(tele) asutuse(te)le.</p><button class="ask-sidebar-btn" onclick="openAskBuilder()" aria-label="Küsi selgitust valitud sündmuste kohta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.36A8.5 8.5 0 1 1 20.9 9.3a8.38 8.38 0 0 1 .1 2.2z"/></svg>Küsi selgitust</button></div></aside>
+  </div>
+  <p class="footer">Õppeprototüüp: „Andmejälgija – Minu andmete lugu”. See ei ole päris eesti.ee teenus ega kuva tegelikke isikuandmeid.</p>
+</main>
+<div id="modal" class="modal" role="dialog" aria-modal="true"><div class="dialog"><button class="close" onclick="closeModal()" aria-label="Sulge">×</button><div id="modalContent"></div></div></div>
+<script>
+const details={
+ health:{title:'Miks Terviseamet minu andmeid kasutas?',who:'Terviseamet',when:'25. oktoober 2026 kell 10.34',why:'Sinu poolelioleva menetluse teavituse ettevalmistamiseks.',data:'Nimi, isikukood ja kontaktandmed.',tech:'Tehniline info: kontaktandmete päring riiklikust andmekogust.'},
+ transport:{title:'Miks Transpordiamet minu andmeid kasutas?',who:'Transpordiamet',when:'18. oktoober 2026 kell 14.08',why:'Juhiloa väljastamisega seotud kontaktandmete ajakohastamiseks.',data:'Elukoha aadress ja kontaktandmed.',tech:'Tehniline info: aadressiandmete kontroll registrist.'},
+ education:{title:'Miks Haridus- ja Noorteamet minu andmeid kasutas?',who:'Haridus- ja Noorteamet',when:'9. oktoober 2026 kell 09.21',why:'Sinu esitatud taotluse töötlemiseks.',data:'Õppimisega seotud haridusandmed.',tech:'Tehniline info: haridusandmete päring seotud andmekogust.'}
+};
+function openDetail(key){const d=details[key];document.getElementById('modalContent').innerHTML=`<h2>${d.title}</h2><p>See on <strong>tavapärane toiming</strong>, mis on seotud avaliku teenuse või menetlusega.</p><div class="detail-box"><p><strong>Kes?</strong> ${d.who}</p><p><strong>Millal?</strong> ${d.when}</p><p><strong>Miks?</strong> ${d.why}</p><p><strong>Milliseid andmeid kasutati?</strong> ${d.data}</p></div><button class="linkbtn" onclick="toggleTech(this, '${d.tech.replace(/'/g, "\\'")}')">Näita tehnilist infot</button><p class="sig-note">Soovid selle sündmuse kohta selgitust? Kasuta lehe paremas allnurgas olevat nuppu „Küsi selgitust“ – saad korraga valida mitu sündmust ja saata ühe koondpäringu.</p>`;document.getElementById('modal').classList.add('open')}
+function toggleTech(btn,text){if(btn.nextElementSibling&&btn.nextElementSibling.className==='detail-box tech'){btn.nextElementSibling.remove();btn.textContent='Näita tehnilist infot';return}const box=document.createElement('div');box.className='detail-box tech';box.innerHTML='<p>'+text+'</p>';btn.after(box);btn.textContent='Peida tehniline info'}
+const eventsData=[
+ {id:'health',org:'Terviseamet',date:'25. oktoober 2026',title:'kasutas sinu kontaktandmeid',area:'Tervis',daysAgo:2},
+ {id:'transport',org:'Transpordiamet',date:'18. oktoober 2026',title:'kontrollis sinu aadressiandmeid',area:'Rahvastik',daysAgo:9},
+ {id:'education',org:'Haridus- ja Noorteamet',date:'9. oktoober 2026',title:'kontrollis sinu haridusandmeid',area:'Haridus',daysAgo:18}
+];
+let askSelected=new Set();
+function openAskBuilder(){
+ askSelected=new Set();
+ document.getElementById('modalContent').innerHTML=`<h2>Küsi selgitust</h2><p>Vali kuupäeva ja valdkonna järgi sündmused, mille kohta soovid asutus(t)elt selgitust. Saad korraga valida mitu sündmust – saadetakse üks koondpäring.</p><div class="ask-filters"><label for="askArea">Valdkond</label><select id="askArea" onchange="renderAskList()"><option>Kõik valdkonnad</option><option>Tervis</option><option>Haridus</option><option>Sotsiaalteenused</option><option>Rahvastik</option></select><label for="askPeriod">Ajavahemik</label><select id="askPeriod" onchange="renderAskList()"><option value="30">Viimased 30 päeva</option><option value="7">Viimased 7 päeva</option><option value="365">Viimased 12 kuud</option></select></div><div id="askList" class="ask-list"></div><button class="primary" onclick="reviewAskRequest()">Jätka selgitustaotluse koostamisega</button>`;
+ renderAskList();
+ document.getElementById('modal').classList.add('open');
+}
+function renderAskList(){
+ const areaEl=document.getElementById('askArea'),periodEl=document.getElementById('askPeriod');
+ const area=areaEl?areaEl.value:'Kõik valdkonnad';
+ const days=periodEl?parseInt(periodEl.value,10):30;
+ const filtered=eventsData.filter(e=>(area==='Kõik valdkonnad'||e.area===area)&&e.daysAgo<=days);
+ const list=document.getElementById('askList');
+ if(filtered.length===0){list.innerHTML='<div class="ask-empty">Valitud filtritele vastavaid sündmusi ei leitud.</div>';return}
+ list.innerHTML=filtered.map(e=>`<label class="ask-item"><input type="checkbox" value="${e.id}" ${askSelected.has(e.id)?'checked':''} onchange="toggleAskSelect('${e.id}', this.checked)"><strong>${e.org}</strong> ${e.title}<span>${e.date}</span></label>`).join('');
+}
+function toggleAskSelect(id,checked){if(checked)askSelected.add(id);else askSelected.delete(id)}
+function reviewAskRequest(){
+ if(askSelected.size===0){alert('Palun vali vähemalt üks sündmus, mille kohta soovid selgitust.');return}
+ const chosen=eventsData.filter(e=>askSelected.has(e.id));
+ document.getElementById('modalContent').innerHTML=`<h2>Vaata üle oma selgitustaotlus</h2><p>Saadame järgneva koondpäringu kõigile seotud asutus(t)ele korraga:</p><div class="ask-summary"><ul>${chosen.map(e=>`<li><strong>${e.org}</strong> — ${e.date}</li>`).join('')}</ul></div><p>Enne saatmist tuleb päring kinnitada e-allkirjaga (nt Mobiil-ID või Smart-ID), et tõendada sinu isikut asutus(t)ele.</p><button class="primary" onclick="confirmAskSend()">Allkirjasta ja saada (Mobiil-ID / Smart-ID)</button><div id="askSent" class="notice">Näidisprototüüp: päring on e-allkirjastatud ja valmis saatmiseks. Päristeenuses liiguks see automaatselt asutus(t)e kontaktkanalisse.</div>`;
+}
+function confirmAskSend(){document.getElementById('askSent').style.display='block';askSelected.clear()}
+function showHelp(){document.getElementById('modalContent').innerHTML='<h2>Kuidas andmesündmusi tõlgendada?</h2><div class="detail-box"><p><strong>Tavaline toiming</strong> tähendab, et tegevus on tõenäoliselt seotud sinu kasutatud teenuse, menetluse või vajaliku teavitusega.</p></div><p>Vaata alati nelja asja: kes andmeid kasutas, millal see toimus, mis eesmärgil ja milliseid andmeid kasutati.</p><p>Kui selgitus ei vasta sinu olukorrale või jääb segaseks, vali „Küsi selgitust”.</p>';document.getElementById('modal').classList.add('open')}
+function closeModal(){document.getElementById('modal').classList.remove('open')}document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+</script>
+</body>
+</html>
