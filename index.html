@@ -55,6 +55,52 @@ body{font-family:Arial,Helvetica,sans-serif;color:#1f2933;background:#f5f6f7;lin
 .badge .actor-self{background:#eceff2;color:#33414c}
 #noEvents{display:none;background:#fff;border:1px solid #d5dbe0;border-radius:8px;margin-bottom:13px}
 @media(max-width:760px){.intro-grid{display:block;padding:0 23px 18px}.intro-grid .intro-card{display:block;width:100%;margin:0;padding:18px 0 4px}.badge span{display:inline-block;margin-bottom:4px}}
+/* Täiendatud mobiilivaade (sama fail, kohandub ekraani laiusega). */
+@media(max-width:760px){
+.topbar{display:block;padding:14px 16px}.brand{display:block;font-size:19px}
+.nav{display:block;text-align:left;margin-top:8px;font-size:13px}.nav a{display:inline-block;margin:0 18px 0 0}
+.wrap{padding:18px 14px 40px}.crumb{font-size:12px;margin-bottom:12px}
+.hero{padding:22px 18px 16px;border-left-width:5px}.hero h1{font-size:26px;letter-spacing:-.5px}.hero p{font-size:15px}
+.intro-grid{padding:0 18px 14px;border-left-width:5px}
+.section-head{margin-top:28px}.section-head h2{display:block;font-size:22px}
+.filters{padding:14px}.filters label{display:block;margin:0 0 5px}.filters select{display:block;width:100%;margin:0 0 12px}.filters .check{display:block}
+.layout{border-spacing:0}
+.event{padding:16px}.event-top{display:block}.event-date{display:block;margin-bottom:8px}.badge{display:block;text-align:left}.badge span{display:inline-block;margin:0 6px 4px 0}.badge span+span{margin-left:0}
+.event h3{font-size:17px}.linkbtn{padding:8px 0;font-size:15px}
+.side-card{padding:20px}.side-card button,.ask-sidebar-btn{width:100%;padding:13px}
+.modal{padding:10px}.dialog{margin:14px auto;padding:22px 18px}.dialog h2{font-size:22px}
+.ask-filters label{display:block;margin:0 0 4px}.ask-filters select{width:100%;margin:0 0 10px}.ask-list{max-height:48vh}
+.primary{width:100%;padding:13px 15px}
+select,textarea,input{font-size:16px}
+.footer{font-size:12px}
+}
+/* Statistika plokk: sama kaardiilme, nurgad ja joondus mis esimesel plokil. */
+.stats{background:#fff;border:1px solid #d5dbe0;border-radius:8px;margin-top:18px;padding:22px 26px 24px;box-shadow:0 1px 2px rgba(24,39,52,.08)}
+.stats-head{display:table;width:100%;margin-bottom:18px}
+.stats-head h2{display:table-cell;margin:0;font-size:21px;color:#202a35;letter-spacing:-.2px}
+.stats-head .muted{display:table-cell;text-align:right;vertical-align:bottom;font-size:13px;color:#65717c}
+.stats-grid{display:table;width:100%;table-layout:fixed}
+.stat{display:table-cell;vertical-align:top;padding:4px 24px;border-left:1px solid #e7ebee}
+.stat:first-child{padding-left:0;border-left:0}.stat:last-child{padding-right:0}
+.stat-num{font-size:42px;font-weight:bold;line-height:1;letter-spacing:-1px}
+.stat-num.human{color:#8a4b00}.stat-num.machine{color:#006fce}.stat-num.orgs{color:#202a35}
+.stat-label{font-weight:bold;color:#202a35;margin-top:9px;font-size:15px}
+.stat p{font-size:14px;color:#55616d;margin:4px 0 0}
+.stats-split{margin-top:22px;padding-top:18px;border-top:1px solid #e7ebee}
+.stats-bar{display:table;width:100%;height:12px;border-radius:6px;overflow:hidden;table-layout:fixed}
+.stats-bar span{display:table-cell;height:12px}
+.stats-bar .b-machine{width:67%;background:#006fce}.stats-bar .b-human{width:33%;background:#f0a64d}
+.stats-legend{font-size:13px;color:#55616d;margin-top:10px}
+.stats-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin:0 6px 0 0;vertical-align:-1px}
+.stats-legend span{margin-right:18px}
+.stats-split{display:none}
+@media(max-width:760px){
+.stats{padding:18px;border-radius:8px}
+.stats-head{display:block}.stats-head h2{display:block;font-size:19px}.stats-head .muted{display:block;text-align:left;margin-top:4px}
+.stats-grid{display:block}.stat{display:block;padding:14px 0;border-left:0;border-top:1px solid #e7ebee}.stat:first-child{border-top:0;padding-top:0}.stat:last-child{padding-bottom:0}
+.stat-num{font-size:36px}
+.stats-legend span{display:block;margin:0 0 4px}
+}
 </style>
 </head>
 <body>
@@ -70,6 +116,18 @@ body{font-family:Arial,Helvetica,sans-serif;color:#1f2933;background:#f5f6f7;lin
     <div class="intro-card"><div class="icon">1</div><h3>Vaata sündmusi</h3><p>Näed kronoloogilises vaates, millised asutused sinu andmeid kasutasid.</p></div>
     <div class="intro-card"><div class="icon">2</div><h3>Mõista põhjust</h3><p>Iga kirje juures on selge ja arusaadav selgitus andmete kasutamise kohta.</p></div>
     <div class="intro-card"><div class="icon">3</div><h3>Küsi vajadusel selgitust</h3><p>Kui miski tundub ebatavaline või jääb segaseks, saad küsida otse asutuselt.</p></div>
+  </section>
+  <section class="stats" aria-label="Andmekasutuse statistika">
+    <div class="stats-head"><h2>Minu andmekasutuse statistika</h2><div class="muted">Viimased 12 kuud · näidisandmed</div></div>
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num human">5</div><div class="stat-label">Inimese tehtud päringut</div><p>Ametniku või sinu enda tehtud andmevaatamised.</p></div>
+      <div class="stat"><div class="stat-num machine">10</div><div class="stat-label">Masina tehtud päringut</div><p>Automaatsed süsteemipäringud avalike teenuste ja menetluste jaoks.</p></div>
+      <div class="stat"><div class="stat-num orgs">6</div><div class="stat-label">Erinevat asutust</div><p>Nii paljud asutused on sinu andmeid kasutanud.</p></div>
+    </div>
+    <div class="stats-split">
+      <div class="stats-bar" role="img" aria-label="Päringutest 10 tegi masin ja 5 inimene"><span class="b-machine"></span><span class="b-human"></span></div>
+      <div class="stats-legend"><span><i style="background:#006fce"></i>Masin: 10 päringut (67%)</span><span><i style="background:#f0a64d"></i>Inimene: 5 päringut (33%)</span></div>
+    </div>
   </section>
   <div class="section-head" id="sundmused"><h2>Minu hiljutised andmesündmused</h2><div class="muted">Näidisandmed Demo Day prototüübi jaoks</div></div>
   <div class="filters"><label for="area">Filtreeri valdkonna järgi</label><select id="area" onchange="applyFilters()"><option>Kõik valdkonnad</option><option>Tervis</option><option>Haridus</option><option>Sotsiaalteenused</option><option>Rahvastik</option></select><label for="period">Ajavahemik</label><select id="period" onchange="applyFilters()"><option value="30">Viimased 30 päeva</option><option value="7">Viimased 7 päeva</option><option value="365">Viimased 12 kuud</option></select><label for="actor">Päringu tegija</label><select id="actor" onchange="applyFilters()"><option value="all">Masin ja inimene</option><option value="masin">Masin (automaatne päring)</option><option value="inimene">Inimene (ametnik või mina ise)</option></select><div class="filter-row"><label class="check"><input type="checkbox" id="hideSelf" onchange="applyFilters()">Peida minu enda tehtud päringud</label></div></div>
